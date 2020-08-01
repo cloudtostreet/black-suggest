@@ -256,7 +256,7 @@ if __name__ == "__main__":
         "access_token": args.access_token,
         "github_repository": os.environ["GITHUB_REPOSITORY"],
         "pull_request_number": github_event["pull_request"]["number"],
-        "commit_id": github_event["pull_request"]["sha"],
+        "commit_id": github_event["pull_request"]["head"]["sha"],
         "repo_path": os.environ["GITHUB_WORKSPACE"],
     }
 
