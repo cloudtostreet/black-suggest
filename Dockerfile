@@ -5,7 +5,7 @@ FROM alpine:3.10
 COPY entrypoint.sh /entrypoint.sh
 COPY apply_patches_as_suggestion.py /apply_patches_as_suggestion.py
 
-RUN apt-get install python
+RUN apk add python
 RUN pip install -r requirements.txt
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
