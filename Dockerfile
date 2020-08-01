@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY apply_patches_as_suggestion.py /apply_patches_as_suggestion.py
 
 RUN apk add python3
-RUN pip install -r requirements.txt
+RUN python3 -m pip install -r requirements.txt
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
