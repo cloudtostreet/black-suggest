@@ -249,6 +249,9 @@ if __name__ == "__main__":
     with open(os.environ["GITHUB_EVENT_PATH"], "r") as github_event_file:
         github_event = json.load(github_event_file)
 
+    print('Reading GitHub event file: ')
+    pprint(github_event)
+
     context = {
         "access_token": args.access_token,
         "github_repository": os.environ["GITHUB_REPOSITORY"],
