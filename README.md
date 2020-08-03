@@ -4,7 +4,7 @@ GitHub action that suggests edits from the black autoformatter for Python
 
 # Installing
 
-Create and commit `.github/workflows/black-suggest.yml` in your repo:a
+Create and commit `.github/workflows/black-suggest.yml` in your repo
 
 ```yml
 name: Run Black on Pull Request
