@@ -27,4 +27,8 @@ jobs:
 
           # The directory to run the formatter on. "." for everything.
           path: "."
+
+          # (optional) line length. this is optional, and defaults to 88
+          line-length: 120
+
 ```
