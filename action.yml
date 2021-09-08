@@ -7,10 +7,15 @@ inputs:
       description: "Directory to run Black on"
       required: true
       default: .
+    line-length:
+      description: "Black line length."
+      required: false
+      default: 88
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.access-token }}
     - ${{ inputs.path }}
+    - ${{ inputs.line-length }}
 
