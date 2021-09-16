@@ -196,9 +196,13 @@ def parse_suggestions_from_hunk(hunk):
             # suggestion so it doesn't get deleted
             suggestion_lines = [predecessor_group[-1], *added_group]
         else:
-            raise Exception(
-                f"Invariant violated. Consecutive '+' groups at indices {added_group_index - 1}, {added_group_index}:\n{''.join(predecessor_group)}\n{''.join(added_group)}"
+            print(
+                "Warning - discarding suggestion of added lines. It follows "
+                "after another suggestion of added lines. The discarded "
+                "suggestion is:", 
+                "".join(line.value for line in added_group),
             )
+            continue
 
         # Join all lines and remove trailing newline
         suggestion = "".join(line.value for line in suggestion_lines)[:-1]
