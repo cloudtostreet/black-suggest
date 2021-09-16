@@ -202,6 +202,7 @@ def parse_suggestions_from_hunk(hunk):
                 "suggestion is:", 
                 "".join(line.value for line in added_group),
             )
+            continue
 
         # Join all lines and remove trailing newline
         suggestion = "".join(line.value for line in suggestion_lines)[:-1]
