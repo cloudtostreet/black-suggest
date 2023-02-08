@@ -3,6 +3,9 @@ FROM python:3
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Let git know that this directory is safe. 
+#  Necessary due to this debain patch that's affecting github CIs
 # https://github.com/actions/runner-images/issues/6775
 RUN git config --system --add safe.directory /github/workspace
 
